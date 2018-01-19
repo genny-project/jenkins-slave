@@ -1,0 +1,1 @@
+docker build -t gennyproject/jenkins-slave:latest .
