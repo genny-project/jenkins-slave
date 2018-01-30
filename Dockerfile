@@ -24,7 +24,7 @@ RUN apt-get install nodejs -y
 #RUN apt-cache search maven
 #RUN apt-get install maven -y
 
-ENV MAVEN_VERSION 3.3.9
+ENV MAVEN_VERSION 3.5.2
 
 RUN curl -fsSL http://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar xzf - -C /usr/share \
   && mv /usr/share/apache-maven-$MAVEN_VERSION /usr/share/maven \
