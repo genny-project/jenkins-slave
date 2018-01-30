@@ -21,8 +21,16 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN apt-get install nodejs -y
 
 #maven
-RUN apt-cache search maven
-RUN apt-get install maven -y
+#RUN apt-cache search maven
+#RUN apt-get install maven -y
+
+ENV MAVEN_VERSION 3.3.9
+
+RUN curl -fsSL http://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar xzf - -C /usr/share \
+  && mv /usr/share/apache-maven-$MAVEN_VERSION /usr/share/maven \
+  && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+
+ENV MAVEN_HOME /usr/share/maven
 
 
 
